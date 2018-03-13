@@ -1,0 +1,11 @@
+services:
+    parameterizer_client.cache:
+        class: 'Micayael\Parameterizer\ClientBundle\Cache\CacheUtil'
+        arguments: ["%kernel.cache_dir%"]
+        public: true
+
+    parameterizer_client.cache_warmer:
+        class: 'Micayael\Parameterizer\ClientBundle\Cache\Warmer'
+        arguments: ['@parameterizer_client.cache', '%parameterizer_client_config%']
+        tags:
+            - { name: kernel.cache_warmer }
