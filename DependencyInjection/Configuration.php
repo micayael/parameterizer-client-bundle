@@ -30,7 +30,7 @@ class Configuration implements ConfigurationInterface
 
                 ->scalarNode('uri')
                     ->info('URI del servicio para obtener los parámetros')
-                    ->defaultValue('/api/parametros/{aplicacion}')
+                    ->defaultValue('/api/parametros')
                     ->cannotBeEmpty()
                 ->end()
 
@@ -42,12 +42,6 @@ class Configuration implements ConfigurationInterface
 
                 ->scalarNode('password')
                     ->info('Password de conexión al parameterizer')
-                    ->isRequired()
-                    ->cannotBeEmpty()
-                ->end()
-
-                ->scalarNode('aplicacion_id')
-                    ->info('Id de la aplicación en el parameterizer')
                     ->isRequired()
                     ->cannotBeEmpty()
                 ->end()

@@ -26,7 +26,6 @@ parameterizer_client:
     host: http://localhost:8000
     username: user
     password: pass
-    aplicacion_id: aplicacion
 ~~~
 
 ### Para utilizarlo dentro de los controllers

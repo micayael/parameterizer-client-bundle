@@ -21,7 +21,6 @@ class Warmer extends CacheWarmer
         $client = new Client();
 
         $uri = $this->configs['host'].$this->configs['uri'];
-        $uri = str_replace('{aplicacion}', $this->configs['aplicacion_id'], $uri);
 
         $response = $client->request('GET', $uri, [
             'auth' => [$this->configs['username'], $this->configs['username']],
