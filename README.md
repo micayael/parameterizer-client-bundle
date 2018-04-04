@@ -6,7 +6,7 @@ Instalación del bundle
 
 ### Instalación
 ~~~
-    composer require micayael/parameterizer-client-bundle:^1.0.0
+    composer require micayael/parameterizer-client-bundle:1.0.*
 ~~~
 
 ### Activación del bundle en el AppKernel.php
