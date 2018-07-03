@@ -1,6 +1,5 @@
 {
   "name": "micayael/parameterizer-client-bundle",
-  "version": "1.0.1",
   "type": "symfony-bundle",
   "description": "Cliente para Parameterizer",
   "keywords": ["parameterizer"],
