@@ -29,13 +29,28 @@ class CacheUtil
         $this->data[$key] = $data;
     }
 
-    public function get($key)
+    public function get($dominio, $codigo=null)
     {
-        return $this->cache->fetch('cache')[$key];
+        $parametros = $this->cache->fetch('cache')['parametros'];
+
+        if(!$codigo){
+
+            if(isset($parametros[$dominio])){
+                return $parametros[$dominio];
+            }
+
+            return null;
+        }
+
+        if(isset($parametros[$dominio]) && isset($parametros[$dominio][$codigo])){
+            return $parametros[$dominio][$codigo];
+        }
+
+        return null;
     }
 
     public function getAll()
     {
-        return $this->cache->fetch('cache');
+        return $this->cache->fetch('cache')['parametros'];
     }
 }

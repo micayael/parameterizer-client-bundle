@@ -46,6 +46,11 @@ class Configuration implements ConfigurationInterface
                     ->cannotBeEmpty()
                 ->end()
 
+                ->scalarNode('agrupado')
+                    ->info('Indica si se debe recibir el json de parámetros plano o agrupando los parámetros por dominio')
+                    ->defaultTrue()
+                ->end()
+
             ->end()
         ;
 

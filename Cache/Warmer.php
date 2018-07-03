@@ -22,9 +22,17 @@ class Warmer extends CacheWarmer
 
         $uri = $this->configs['host'].$this->configs['uri'];
 
-        $response = $client->request('GET', $uri, [
+        $options = [
             'auth' => [$this->configs['username'], $this->configs['username']],
-        ]);
+        ];
+
+        if($this->configs['agrupado']){
+            $options['query'] = ['agrupado' => true];
+        }else{
+            $options['query'] = ['agrupado' => false];
+        }
+
+        $response = $client->request('GET', $uri, $options);
 
         $parametros = json_decode($response->getBody(), true);
 

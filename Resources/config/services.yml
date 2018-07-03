@@ -9,3 +9,9 @@ services:
         arguments: ['@parameterizer_client.cache', '%parameterizer_client_config%']
         tags:
             - { name: kernel.cache_warmer }
+
+    parameterizer_client.twig_extension:
+        class: 'Micayael\Parameterizer\ClientBundle\Twig\ParameterizerExtension'
+        arguments: ['@parameterizer_client.cache']
+        tags:
+            - { name: twig.extension }
